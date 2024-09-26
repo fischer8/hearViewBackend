@@ -24,6 +24,10 @@ UserModel.init({
     type: STRING,
     allowNull: false,
   },
+  version: {
+    type: INTEGER,
+    allowNull: false,
+  }
 }, {
   sequelize: db,
   modelName: 'users',

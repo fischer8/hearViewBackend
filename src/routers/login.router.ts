@@ -11,9 +11,6 @@ loginRouter.get('/',(req, res)=>{
 loginRouter.post('/login', validateLogin, LoginController.login);
 loginRouter.post('/create-account', validateLogin, LoginController.createAccount)
 
-loginRouter.get('/oi',(req, res)=>{
-  return res.status(200).json('oi')
-})
 
 export default loginRouter;
 

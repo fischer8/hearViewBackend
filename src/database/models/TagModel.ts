@@ -8,11 +8,16 @@ class TagModel extends Model {
 }
 
 TagModel.init({
+  id: {
+    type: INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE',
+  },
   tagId: {
     type: INTEGER,
     allowNull: false,
-    primaryKey: true,
-    autoIncrement: false,
     onUpdate: 'CASCADE',
     onDelete: 'CASCADE',
   },
