@@ -26,6 +26,7 @@ UserModel.init({
   },
   version: {
     type: INTEGER,
+    defaultValue: 1,
     allowNull: false,
   }
 }, {

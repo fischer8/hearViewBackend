@@ -5,7 +5,8 @@ import validate from "../middlewares/validateToken";
 const tagRouter = Router();
 
 
-tagRouter.post('/tag', validate, TagController.tagEdit);
+tagRouter.post('/insert', validate, TagController.insert);
+tagRouter.get('/get-tag', validate, TagController.getAll);
 
 export default tagRouter;
 

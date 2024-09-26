@@ -4,6 +4,8 @@ import UserModel from './UserModel';
 
 class TagModel extends Model {
   declare id: number;
+  declare tagId: number;
+  declare userId: number;
   declare data: string;
 }
 
