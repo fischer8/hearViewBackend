@@ -23,7 +23,7 @@ VersionModel.init({
   }
 }, {
   sequelize: db,
-  modelName: 'version',
+  modelName: 'versions',
   timestamps: false,
   underscored: true,
 });

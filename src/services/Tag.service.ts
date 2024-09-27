@@ -6,11 +6,12 @@ import { ITag } from '../interfaces/ITag';
 
 
 class TagService {
-  public static async  insert(data: ITag[], id:number) {
+  public static async insert(data: ITag[], id:number) {
     const version = await VersionModel.increment({ version: 1}, { where: {id: 1}})
     const versionRetrn = await UserModel.increment({ version: 1}, { where: { id: id }})
     console.log('version ----------- ', version);
     console.log('versionsadjksafh ----------- ', versionRetrn);
+    console.log("datatatata   ", data)
       await TagModel.bulkCreate(data, {
         updateOnDuplicate: ['data'],
         validate: true // valida os dados antes de inserir

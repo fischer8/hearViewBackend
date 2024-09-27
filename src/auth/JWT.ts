@@ -1,6 +1,6 @@
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
-const secretKey: string = process.env.JWT_SECRET || 'suaSenhaSecreta';
+const secretKey: string = 'suaSenhaSecreta';
 
 const configJWT: object = {
   expiresIn: '7d',
@@ -13,8 +13,7 @@ const generateToken = (payload: object) => {
 };
 
 const validateToken = (token: string) => {
-  const {data} = jwt.verify(token, secretKey) as JwtPayload;
-  console.log(data, "jwt jones ativar")
+  const data = jwt.verify(token, secretKey) as JwtPayload;
   return data;
 };
 
