@@ -7,6 +7,7 @@ const tagRouter = Router();
 
 tagRouter.post('/insert', validate, TagController.insert);
 tagRouter.get('/get-tag', validate, TagController.getAll);
+tagRouter.get('/get-version', validate, TagController.getVersion);
 
 export default tagRouter;
 

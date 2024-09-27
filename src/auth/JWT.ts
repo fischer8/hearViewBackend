@@ -14,6 +14,7 @@ const generateToken = (payload: object) => {
 
 const validateToken = (token: string) => {
   const {data} = jwt.verify(token, secretKey) as JwtPayload;
+  console.log(data, "jwt jones ativar")
   return data;
 };
 
