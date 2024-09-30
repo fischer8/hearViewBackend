@@ -20,12 +20,15 @@ TagModel.init({
   tagId: {
     type: INTEGER,
     allowNull: false,
+    unique: true,
     onUpdate: 'CASCADE',
     onDelete: 'CASCADE',
+    field: 'tag_id'
   },
   userId: {
     type: INTEGER,
     allowNull: false,
+    field: 'user_id'
   },
   data: {
     type: STRING,
@@ -38,7 +41,7 @@ TagModel.init({
   underscored: true,
 });
 
-TagModel.belongsTo(UserModel, { foreignKey: 'userId', as: 'user' });
+TagModel.belongsTo(UserModel, { foreignKey: 'user_id', as: 'user' });
 
 export default TagModel;
 

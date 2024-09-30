@@ -16,8 +16,10 @@ module.exports = {
         allowNull: false,
         primaryKey: false,
         autoIncrement: false,
+        unique: true,
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
+        field: 'tag_id'
       },
       userId: {
         type: Sequelize.INTEGER,
@@ -28,6 +30,7 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
+        field: 'user_id'
       },
       data: {
         type: Sequelize.STRING,

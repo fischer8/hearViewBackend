@@ -4,6 +4,7 @@ import TagService from '../services/Tag.service';
 class TagController {
   public static async insert(req: Request, res: Response) {
     const { data, id } = req.body;
+    console.log("agora vaiiiiiiii ", data)
     const message = await TagService.insert(data, id);
     return res.status(200).json(message);
   }
