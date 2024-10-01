@@ -7,8 +7,7 @@ import { ITag } from '../interfaces/ITag';
 
 class TagService {
   public static async insert(data: ITag[], id:number) {
-    const versionRetrn = await UserModel.increment({ version: 1}, { where: { id: id }})
-    console.log('versionsadjksafh ----------- ', versionRetrn);
+    await UserModel.increment({ version: 1}, { where: { id: id }})
 
     for(const d of data){
       await TagModel.upsert({tagId: d.tagId, userId: id, data: d.data})
@@ -17,7 +16,7 @@ class TagService {
   }
  
   public static async getAll(){
-    const data = TagModel.findAll({order: [['tagId', 'ASC']]});
+    const data = TagModel.findAll({attributes: ['data'], order: [['tagId', 'ASC']]});
     return data;
   }
   
